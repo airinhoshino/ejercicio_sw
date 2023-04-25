@@ -1,0 +1,1 @@
+console.log('SW: Im a service worker');
