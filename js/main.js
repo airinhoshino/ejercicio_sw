@@ -8,7 +8,7 @@ if (navigator.serviceWorker) {
 
 fetch('https://reqres.in/api/users')
     .then(response => response.json())
-    .then(json => {
+    .then(({data}) => {
          const content = document.querySelector('.content');
          let table = `<table class="table table-striped table-dark table-border table-hover">
                         <thead>
@@ -22,7 +22,7 @@ fetch('https://reqres.in/api/users')
                          </thead>
                          <tbody>`;   
         
-                         json.data.forEach(user => {
+                         data.forEach(user => {
                             table += `
                                 <tr>
                                     <th scope="row">${user.id}</th>
